@@ -117,13 +117,12 @@ class FileWriterTest extends \Securetrading\Unittest\UnittestAbstract {
     ;
     
     \Securetrading\Unittest\CoreMocker::mockCoreFunction('date', function($format, $time = null) use ($mTime, $currentMonthAndYear, $logFileMonthAndYear) {
-	if ($time === null) {
-	  return $currentMonthAndYear;
-	}
-	else if ($time === $mTime) {
+	if ($time === $mTime) {
 	  return $logFileMonthAndYear;
 	}
-	throw new \Exception(sprintf("Unexpected value in mocked 'date' function: '%s'.", $time));
+	else {
+	  return $currentMonthAndYear;
+	}
     });
 
     $actualReturnValue = $this->_($fileWriter, '_mustMoveToArchive', $file->url());

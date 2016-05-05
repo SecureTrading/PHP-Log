@@ -8,7 +8,8 @@ class FactoryTest extends \Securetrading\Unittest\IntegrationtestAbstract {
   public function setUp() {
     parent::setUp();
     $this->_ioc = \Securetrading\Ioc\Helper::instance()
-      ->loadPackage('stLog', \Securetrading\Loader\Loader::getRootPath())
+      ->addEtcDirs(realpath(__DIR__ . '/../../etc/'))
+      ->loadPackage('stLog')
       ->getIoc()
     ;
   }
@@ -74,7 +75,7 @@ class FactoryTest extends \Securetrading\Unittest\IntegrationtestAbstract {
       'logFilePath' => $this->_testDir . 'test_logs/',
       'logArchivePath' => $this->_testDir . 'test_archive_logs/',
     ));
-
+    
     $log->emergency('Emergency message.');
     $log->alert('Alert message.');
     $log->critical('Critical message.');
