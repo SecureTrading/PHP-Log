@@ -1,6 +1,6 @@
 <?php
 
-namespace Securetrading\Stpp\JsonInterface\Tests\Integration;
+namespace Securetrading\Log\Tests\Integration;
 
 class FileWriterTest extends \Securetrading\Unittest\IntegrationtestAbstract {
   protected function _getFilePermissions($filePath) {
