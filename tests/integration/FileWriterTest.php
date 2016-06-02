@@ -40,4 +40,23 @@ class FileWriterTest extends \Securetrading\Unittest\IntegrationtestAbstract {
     $this->assertEquals('0700', $this->_getFilePermissions($logFilePath));
     $this->assertEquals('0700', $this->_getFilePermissions($archiveFilePath));
   }
+
+  public function testLog_RepeatedCallsToLogger_AfterMovingToArchive_WorkBecauseClearstatcacheCalledInFileWriter() {
+    $fileWriter = new \Securetrading\Log\FileWriter('test_log_filename', $this->_testDir . 'logs/', $this->_testDir . 'archived_logs/');
+    $filePath = $fileWriter->getLogFilepath();
+    $date = new \DateTime();
+    $date->modify('-1 month');
+
+    $fileWriter->log(null, 'message 1');
+
+    if (!touch($filePath, $date->getTimestamp())) {
+      throw new \Exception('Failed to alter file mtime.');
+    }
+    clearstatcache();
+    
+    $fileWriter->log(null, 'message 2');
+    $fileWriter->log(null, 'message 3');
+
+    $this->assertEquals('message 2' . PHP_EOL . 'message 3' . PHP_EOL, file_get_contents($fileWriter->getLogFilePath()));
+  }
 }

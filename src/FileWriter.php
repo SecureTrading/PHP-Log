@@ -26,6 +26,8 @@ class FileWriter extends AbstractLogger {
   }
 
   protected function _init() {
+    clearstatcache();
+
     if (!file_exists($this->_logDirectory)) {
       mkdir($this->_logDirectory, 0700, true);
     }
