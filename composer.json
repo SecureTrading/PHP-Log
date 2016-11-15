@@ -5,13 +5,13 @@
   "license" : "MIT",
   "require" : {
     "php" : ">=5.3.0",
-    "securetrading/exception" : "dev-master",
-    "securetrading/ioc" : "dev-master",
-    "securetrading/loader" : "dev-master",
+    "securetrading/exception" : "~1.0",
+    "securetrading/ioc" : "~1.0",
+    "securetrading/loader" : "~1.0",
     "psr/log" : "~1.0"
   },
   "require-dev" : {
-    "securetrading/unittest" : "dev-master",
+    "securetrading/unittest" : "~1.0",
     "mikey179/vfsstream" : "1.5.0"
   },
   "autoload" : {
