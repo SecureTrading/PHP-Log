@@ -9,11 +9,11 @@ require_once(__DIR__ . '/helpers/CoreMocks.php');
 class FormatterTest extends \Securetrading\Unittest\UnittestAbstract {
   protected $_formatter;
 
-  public function setUp() {
+  public function setUp() : void {
     $this->_formatter = new \Securetrading\Log\Formatter();
   }
 
-  public function tearDown() {
+  public function tearDown() : void {
     CoreMocker::releaseCoreMocks();
   }
 
@@ -31,10 +31,12 @@ class FormatterTest extends \Securetrading\Unittest\UnittestAbstract {
   }
 
   /**
-   * @expectedException \Securetrading\Log\FormatterException
-   * @expectedExceptionCode \Securetrading\Log\FormatterException::CODE_LOGGER_NOT_SET
+   *
    */
   public function testGetLogger_IfNotSet() {
+    $this->expectException(\Securetrading\Log\FormatterException::class);
+    $this->expectExceptionCode(\Securetrading\Log\FormatterException::CODE_LOGGER_NOT_SET);
+    
     $this->_($this->_formatter, '_getLogger');
   }
 

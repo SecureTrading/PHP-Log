@@ -12,7 +12,7 @@ class FilterTest extends \Securetrading\Unittest\UnittestAbstract {
     return $this->getMockForAbstractClass('\Psr\Log\AbstractLogger');
   }
 
-  public function setUp() {
+  public function setUp() : void {
     $this->_filter = new Filter();
   }
 
@@ -26,10 +26,12 @@ class FilterTest extends \Securetrading\Unittest\UnittestAbstract {
   }
 
   /**
-   * @expectedException \Securetrading\Log\FilterException
-   * @expectedExceptionCode \Securetrading\Log\FilterException::CODE_LOGGER_NOT_SET
+   * 
    */
   public function testGetLogger_IfNotSet() {
+    $this->expectException(\Securetrading\Log\FilterException::class);
+    $this->expectExceptionCode(\Securetrading\Log\FilterException::CODE_LOGGER_NOT_SET);
+    
     $this->_filter->getLogger();
   }
 
@@ -162,10 +164,12 @@ class FilterTest extends \Securetrading\Unittest\UnittestAbstract {
   }
 
   /**
-   * @expectedException \Securetrading\Log\FilterException
-   * @expectedExceptionCode \Securetrading\Log\FilterException::CODE_INVALID_LOG_LEVEL
+   * 
    */
   public function test_getLogLevelNumber_WithInvalidLogLevel() {
+    $this->expectException(\Securetrading\Log\FilterException::class);
+    $this->expectExceptionCode(\Securetrading\Log\FilterException::CODE_INVALID_LOG_LEVEL);
+    
     $this->_($this->_filter, '_getLogLevelNumber', 'INVALID_LOG_LEVEL_STRING');
   }
 }

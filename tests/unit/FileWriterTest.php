@@ -11,7 +11,7 @@ class FileWriterTest extends \Securetrading\Unittest\UnittestAbstract {
     return new \Securetrading\Log\FileWriter($logFileName, $logFileDirectory, $logArchiveDirectory);
   }
 
-  public function tearDown() {
+  public function tearDown() : void {
     \Securetrading\Unittest\CoreMocker::releaseCoreMocks();
   }
 
@@ -75,7 +75,11 @@ class FileWriterTest extends \Securetrading\Unittest\UnittestAbstract {
   public function test_init_HandlesLogArchivingCorrectly($mustMoveToArchive, $matcher) {
     $filesystemRoot = vfsStream::setup('root_dir', 0777, array());
 
-    $fileWriterMock = $this->getMock('\Securetrading\Log\FileWriter', array('_mustMoveToArchive', '_moveToArchive'), array('log', 'vfs://root_dir/logs', 'vfs://root_dir/archived_logs'));
+    $fileWriterMock = $this->getMockBuilder(\Securetrading\Log\FileWriter::class)
+        ->setMethods(['_mustMoveToArchive', '_moveToArchive'])
+        ->setConstructorArgs(['log', 'vfs://root_dir/logs', 'vfs://root_dir/archived_logs'])
+        ->getMock();
+    
     $fileWriterMock
       ->expects($this->once())
       ->method('_mustMoveToArchive')
@@ -170,10 +174,12 @@ class FileWriterTest extends \Securetrading\Unittest\UnittestAbstract {
   }
 
   /**
-   * @expectedException \Securetrading\Log\FileWriterException
-   * @expectedExceptionCode \Securetrading\Log\FileWriterException::CODE_ARCHIVE_FILE_ALREADY_EXISTS
+   * 
    */
   public function test_moveToArchive_ArchiveFileNameAlreadyExists() {
+    $this->expectException(\Securetrading\Log\FileWriterException::class);
+    $this->expectExceptionCode(\Securetrading\Log\FileWriterException::CODE_ARCHIVE_FILE_ALREADY_EXISTS);
+    
     $rootDir = vfsStream::setup('root_dir', 0777, array(
       'logs' => array(),
       'archived_logs' => array()
@@ -271,7 +277,11 @@ class FileWriterTest extends \Securetrading\Unittest\UnittestAbstract {
   public function testLog_CallsInit() {
     $filesystemRoot = vfsStream::setup('root_dir', 0777, array());
 
-    $fileWriterMock = $this->getMock('\Securetrading\Log\FileWriter', array('_init'), array('log', 'vfs://root_dir/logs', 'vfs://root_dir/archived_logs'));
+    $fileWriterMock = $this->getMockBuilder(\Securetrading\Log\FileWriter::class)
+        ->setMethods(['_init'])
+        ->setConstructorArgs(['log', 'vfs://root_dir/logs', 'vfs://root_dir/archived_logs'])
+        ->getMock();
+
     $fileWriterMock
       ->expects($this->once())
       ->method('_init')

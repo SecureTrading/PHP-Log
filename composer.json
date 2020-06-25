@@ -1,18 +1,18 @@
 {
   "name" : "securetrading/log",
-  "version" : "1.0.0",
+  "version" : "2.0.0",
   "description" : "Secure Trading's Log package.",
   "license" : "MIT",
   "require" : {
-    "php" : ">=5.3.0",
-    "securetrading/exception" : "~1.0",
-    "securetrading/ioc" : "~1.0",
-    "securetrading/loader" : "~1.0",
+    "php" : "^7.3",
+    "securetrading/exception" : "^1.0",
+    "securetrading/ioc" : "^2.0",
+    "securetrading/loader" : "^1.0.1",
     "psr/log" : "~1.0"
   },
   "require-dev" : {
-    "securetrading/unittest" : "~1.0",
-    "mikey179/vfsstream" : "1.5.0"
+    "securetrading/unittest" : "^3.0",
+    "mikey179/vfsstream" : "^1.6"
   },
   "autoload" : {
     "psr-4" : {
