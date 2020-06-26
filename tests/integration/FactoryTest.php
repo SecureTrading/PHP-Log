@@ -5,7 +5,7 @@ namespace Securetrading\Log\Tests\Integration;
 use \Securetrading\Log\Filter as Filter;
 
 class FactoryTest extends \Securetrading\Unittest\IntegrationtestAbstract {
-  public function setUp() {
+  public function setUp() : void {
     parent::setUp();
     $this->_ioc = \Securetrading\Ioc\Helper::instance()
       ->addEtcDirs(realpath(__DIR__ . '/../../etc/'))

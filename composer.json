@@ -7,7 +7,7 @@
     "php" : "^7.3",
     "securetrading/exception" : "^1.0",
     "securetrading/ioc" : "^2.0",
-    "securetrading/loader" : "^1.0.1",
+    "securetrading/loader" : "^2.0",
     "psr/log" : "~1.0"
   },
   "require-dev" : {

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "123503bbde6da82ec308633794bddec6",
+    "content-hash": "967a2f8b8eda6bf87b2f73301c0ffd55",
     "packages": [
         {
             "name": "psr/log",
@@ -89,12 +89,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/SecureTrading/PHP-IoC.git",
-                "reference": "531c13815fc3f4b9376aebd747a8f0653bf49577"
+                "reference": "140cde3aaef379a33e7b86a4f22e0c510b5d300c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SecureTrading/PHP-IoC/zipball/531c13815fc3f4b9376aebd747a8f0653bf49577",
-                "reference": "531c13815fc3f4b9376aebd747a8f0653bf49577",
+                "url": "https://api.github.com/repos/SecureTrading/PHP-IoC/zipball/140cde3aaef379a33e7b86a4f22e0c510b5d300c",
+                "reference": "140cde3aaef379a33e7b86a4f22e0c510b5d300c",
                 "shasum": ""
             },
             "require": {
@@ -116,24 +116,24 @@
                 "MIT"
             ],
             "description": "Secure Trading's Inversion of Control (IoC) package.",
-            "time": "2020-06-25T12:56:43+00:00"
+            "time": "2020-06-26T06:28:17+00:00"
         },
         {
             "name": "securetrading/loader",
-            "version": "1.0.1",
+            "version": "2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SecureTrading/PHP-Loader.git",
-                "reference": "923fbb753bd567dcb8a3cd20816b57dcbe2d2e14"
+                "reference": "d8733e83ba5366dfa5440f154fff238f74804400"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SecureTrading/PHP-Loader/zipball/923fbb753bd567dcb8a3cd20816b57dcbe2d2e14",
-                "reference": "923fbb753bd567dcb8a3cd20816b57dcbe2d2e14",
+                "url": "https://api.github.com/repos/SecureTrading/PHP-Loader/zipball/d8733e83ba5366dfa5440f154fff238f74804400",
+                "reference": "d8733e83ba5366dfa5440f154fff238f74804400",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.0"
+                "php": "^7.3"
             },
             "require-dev": {
                 "securetrading/unittest": "^3.0"
@@ -149,7 +149,7 @@
                 "MIT"
             ],
             "description": "Secure Trading's Loader package.",
-            "time": "2020-06-25T13:35:31+00:00"
+            "time": "2020-06-26T06:37:34+00:00"
         }
     ],
     "packages-dev": [
@@ -1814,12 +1814,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/SecureTrading/PHP-Unittest.git",
-                "reference": "0833d7946abb332ac9ba5b39f602f787734b26aa"
+                "reference": "acb65c354c54f6748662f3178506a3e02537503a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SecureTrading/PHP-Unittest/zipball/0833d7946abb332ac9ba5b39f602f787734b26aa",
-                "reference": "0833d7946abb332ac9ba5b39f602f787734b26aa",
+                "url": "https://api.github.com/repos/SecureTrading/PHP-Unittest/zipball/acb65c354c54f6748662f3178506a3e02537503a",
+                "reference": "acb65c354c54f6748662f3178506a3e02537503a",
                 "shasum": ""
             },
             "require": {
@@ -1837,7 +1837,7 @@
                 "MIT"
             ],
             "description": "Secure Trading's unittest package providing helper methods/classes for writing testing with PHPUnit.",
-            "time": "2020-06-25T11:05:39+00:00"
+            "time": "2020-06-26T06:22:13+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
