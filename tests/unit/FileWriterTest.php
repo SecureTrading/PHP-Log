@@ -281,7 +281,9 @@ class FileWriterTest extends \Securetrading\Unittest\UnittestAbstract {
         ->setMethods(['_init'])
         ->setConstructorArgs(['log', 'vfs://root_dir/logs', 'vfs://root_dir/archived_logs'])
         ->getMock();
-
+	
+    mkdir('vfs://root_dir/logs');
+    
     $fileWriterMock
       ->expects($this->once())
       ->method('_init')
