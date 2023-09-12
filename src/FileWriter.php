@@ -84,11 +84,10 @@ class FileWriter extends AbstractLogger {
     return $this->_archiveDirectory . $this->_logFileName . '_' . $logMonthAndYear . '.txt';
   }
 
-  public function log($logLevel, $message, array $context = array()) {
+  public function log($logLevel, $message, array $context = []) : void {
     $this->_init();
     $file = fopen($this->_logFilePath, 'a');
     fwrite($file, $message . PHP_EOL);
     fclose($file);
-    return $this;
   }
 }
