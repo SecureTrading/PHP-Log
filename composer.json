@@ -1,6 +1,6 @@
 {
   "name" : "securetrading/log",
-  "version" : "3.0.0",
+  "version" : "3.0.2",
   "description" : "Secure Trading's Log package.",
   "license" : "MIT",
   "require" : {
@@ -8,7 +8,7 @@
     "securetrading/exception" : "^1.0",
     "securetrading/ioc" : "^3.0",
     "securetrading/loader" : "^2.0",
-    "psr/log" : "~1.0"
+    "psr/log" : "~3.0"
   },
   "require-dev" : {
     "securetrading/unittest" : "^3.0",
