@@ -17,10 +17,10 @@ class Formatter extends \Psr\Log\AbstractLogger {
     return $this->_logger;
   }
 
-  public function log($logLevel, $message, array $context = array()) {
+  public function log($logLevel, $message, array $context = array()): void {
     $message = $this->_formatMessage($logLevel, $message, $context);
     $this->_getLogger()->log($logLevel, $message, $context);
-    return $this;
+    return;
   }
 
   protected function _formatMessage($logLevel, $message, array $context) {

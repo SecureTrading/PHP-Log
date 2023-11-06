@@ -56,11 +56,11 @@ class Filter extends AbstractLogger {
     return $this->_logLevel;
   }
 
-  public function log($logLevel, $message, array $context = array()) {
+  public function log($logLevel, $message, array $context = array()): void {
     if ($this->_canLog($logLevel)) {
       $this->getLogger()->log($logLevel, $message, $context = array());
     }
-    return $this;
+    return;
   }
   
   protected function _canLog($logLevel) {
