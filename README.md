@@ -13,9 +13,9 @@ A helper package used by other Secure Trading packages.
 
 ## PHP Version Compatibility
 
-| Version  | Changes               |
-| -------- |-----------------------|
-| 3.0.0    | PHP 8.1 - PHP 8.2     |
-| 3.0.0    | PHP 8.0.0 - PHP 8.0.3 |
-| 2.0.0    | PHP 7.3 - PHP 7.4     |
-| 1.0.0    | PHP 5.3 - PHP 7.2     |
+| Version | Changes               |
+|---------|-----------------------|
+| 4.0.0   | PHP 8.1 - PHP 8.2     |
+| 3.0.0   | PHP 8.0.0 - PHP 8.0.3 |
+| 2.0.0   | PHP 7.3 - PHP 7.4     |
+| 1.0.0   | PHP 5.3 - PHP 7.2     |
