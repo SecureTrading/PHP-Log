@@ -94,7 +94,7 @@ class FilterTest extends \Securetrading\Unittest\UnittestAbstract {
     $this->_filter->setLogLevel($logLevelToSet);
 
     $returnValue = $this->_filter->log($logLevel, $message, $context);
-    $this->assertSame($this->_filter, $returnValue);
+    $this->assertSame(null, $returnValue);
   }
 
   public function providerLog_WhenCanLog() {
@@ -117,7 +117,7 @@ class FilterTest extends \Securetrading\Unittest\UnittestAbstract {
     $this->_filter->setLogLevel($logLevelToSet);
 
     $returnValue = $this->_filter->log($logLevel, 'my message');
-    $this->assertSame($this->_filter, $returnValue);
+    $this->assertSame(null, $returnValue);
   }
 
   public function providerLog_WhenCannotLog() {
