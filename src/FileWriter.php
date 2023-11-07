@@ -89,6 +89,5 @@ class FileWriter extends AbstractLogger {
     $file = fopen($this->_logFilePath, 'a');
     fwrite($file, $message . PHP_EOL);
     fclose($file);
-    return;
   }
 }

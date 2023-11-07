@@ -5,6 +5,8 @@ namespace Securetrading\Log\Tests\Integration;
 use \Securetrading\Log\Filter as Filter;
 
 class FactoryTest extends \Securetrading\Unittest\IntegrationtestAbstract {
+  private $_ioc;
+
   public function setUp() : void {
     parent::setUp();
     $this->_ioc = \Securetrading\Ioc\Helper::instance()

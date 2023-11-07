@@ -63,10 +63,6 @@ class Filter extends AbstractLogger {
   }
   
   protected function _canLog($logLevel) {
-//     var_dump($logLevel);
-//     var_dump($this->_getLogLevelNumber($logLevel));
-//     var_dump($this->getLogLevel());
-//     var_dump((bool) ($this->_getLogLevelNumber($logLevel) & $this->getLogLevel()));
     return (bool) ($this->_getLogLevelNumber($logLevel) & $this->getLogLevel());
   }
 
