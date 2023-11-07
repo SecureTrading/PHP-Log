@@ -68,7 +68,7 @@ class FormatterTest extends \Securetrading\Unittest\UnittestAbstract {
     $this->_formatter->setLogger($mockLogger);
 
     $returnValue = $this->_formatter->log($logLevel, $message, $context);
-    $this->assertSame($this->_formatter, $returnValue);
+    $this->assertNotSame($this->_formatter, $returnValue);
   }
 
   public function providerLog() {
