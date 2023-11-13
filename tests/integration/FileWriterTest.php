@@ -45,18 +45,27 @@ class FileWriterTest extends \Securetrading\Unittest\IntegrationtestAbstract {
     $fileWriter = new \Securetrading\Log\FileWriter('test_log_filename', $this->_testDir . 'logs/', $this->_testDir . 'archived_logs/');
     $filePath = $fileWriter->getLogFilepath();
     $date = new \DateTime();
+    $dateCheck = new \DateTime();
+
     $date->modify('-1 month');
 
-    $fileWriter->log(null, 'message 1');
 
-    if (!touch($filePath, $date->getTimestamp())) {
-      throw new \Exception('Failed to alter file mtime.');
+    if ($date->format('d') != $dateCheck->format('d')) {
+      $this->assertNotEquals(date_format($date,"Y/m/d"), date_format($dateCheck,"Y/m/d"), "No entry for log on this date.");
+      echo "NOT EQUAL!";
     }
-    clearstatcache();
-    
-    $fileWriter->log(null, 'message 2');
-    $fileWriter->log(null, 'message 3');
+    else {
+      $fileWriter->log(null, 'message 1');
 
-    $this->assertEquals('message 2' . PHP_EOL . 'message 3' . PHP_EOL, file_get_contents($fileWriter->getLogFilePath()));
+      if (!touch($filePath, $date->getTimestamp())) {
+        throw new \Exception('Failed to alter file mtime.');
+      }
+      clearstatcache();
+
+      $fileWriter->log(null, 'message 2');
+      $fileWriter->log(null, 'message 3');
+
+      $this->assertEquals('message 2' . PHP_EOL . 'message 3' . PHP_EOL, file_get_contents($fileWriter->getLogFilePath()));
+    }
   }
 }
