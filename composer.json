@@ -1,6 +1,6 @@
 {
   "name" : "securetrading/log",
-  "version" : "4.0.0",
+  "version" : "4.0.1",
   "description" : "Secure Trading's Log package.",
   "license" : "MIT",
   "require" : {
