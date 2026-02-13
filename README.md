@@ -6,6 +6,7 @@ A helper package used by other Secure Trading packages.
 
 | Version | Changes                        |
 |---------|--------------------------------|
+| 4.0.2   | phpunit update                 |
 | 4.0.1   | Test fix.                      |
 | 4.0.0   | PHP 8.1+ compatibility.        |
 | 3.0.0   | PHP 8 compatibility.           |
@@ -16,6 +17,7 @@ A helper package used by other Secure Trading packages.
 
 | Version | Changes               |
 |---------|-----------------------|
+| 4.0.2   | PHP 8.2               |
 | 4.0.1   | PHP 8.1 - PHP 8.2     |
 | 4.0.0   | PHP 8.1 - PHP 8.2     |
 | 3.0.0   | PHP 8.0.0 - PHP 8.0.3 |
